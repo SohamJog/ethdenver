@@ -5,17 +5,34 @@ import GetFunds from './GetFunds.js';
 import SendFunds from './SendFunds.js';
 import { BrowserRouter as Router, Routes, Route, Link, Switch } from 'react-router-dom';
 import { useSDK } from "@metamask/sdk-react";
-
-// import { Link } from 'react-router-dom';
-// import styled from 'styled-components';
-
-
-
+import Popover from '@mui/material/Popover';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
 
 
 function App() {
   const [account, setAccount] = useState("");
   const { sdk, connected, connecting, provider, chainId } = useSDK();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+
 
     const connect = async () => {
         try {
@@ -31,9 +48,9 @@ function App() {
     <Router>
       <div className="bg-gradient-to-tr from-[#120136] to-[#120136] text-white min-h-screen flex flex-col">
         <nav className="flex justify-between items-center p-4 bg-[#120136]">
-        <Link to="/" className="no-underline text-white">
-         <div className="text-2xl font-bold">BoilerBlockchain</div>
-        </Link>
+          <Link to="/" className="no-underline text-white">
+            <div className="text-2xl font-bold">BoilerBlockchain</div>
+          </Link>
           <ul className="flex gap-8">
             <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
               <Link to="/" className="no-underline text-white">Home</Link>
@@ -46,28 +63,54 @@ function App() {
             </li>
             {/* ... other NavItems */}
           </ul>
+          <div className="flex"> {/* Add this div with the flex class */}
+            {connected ?
+              <div>
+                <Button aria-describedby={id} variant="contained" onClick={handleClick}>
+                  Profile
+                </Button>
+                <Popover
+                  id={id}
+                  open={open}
+                  anchorEl={anchorEl}
+                  onClose={handleClose}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'right',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                >
+                  <List>
+                    <ListItem>
+                      <ListItemText>
+                        <Typography>Connected chain: {chainId}</Typography>
+                      </ListItemText>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemText>
+                          <Typography>Connected account: {account}</Typography>
+                        </ListItemText>
+                    </ListItem>
+                  </List>
+                </Popover>
+              </div> :
+              <div>
+                <Button variant="contained" onClick={connect}>
+                  Connect
+                </Button>
+              </div>
+            }
+          </div>
         </nav>
-
-        <div className="App">
-            <button style={{ padding: 10, margin: 10 }} onClick={connect}>
-                Connect
-            </button>
-            {connected && (
-                <div>
-                    <>
-                        {chainId && `Connected chain: ${chainId}`}
-                        <p></p>
-                        {account && `Connected account: ${account}`}
-                    </>
-                </div>
-            )}
-        </div>
 
         <Routes>
           <Route path="/" element={<HomeContent />} />
           <Route path="/add-funds" element={<AddFunds />} />
-          <Route path="/getfunds/:id" element={<GetFunds/>} />
-          <Route path="/sendfunds" element={<SendFunds/>} />
+          <Route path="/getfunds/:id" element={<GetFunds />} />
+          <Route path="/sendfunds" element={<SendFunds />} />
         </Routes>
       </div>
     </Router>
@@ -80,10 +123,11 @@ const HomeContent = () => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration: 1 }}
-    className="flex-1 flex flex-col justify-center items-center text-center"
+    className="flex-1 flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+    style={{ minHeight: '100vh' }}
   >
-    <motion.h1 className="text-8xl mb-2">Title</motion.h1>
-    <motion.h2 className="text-4xl">Subtitle</motion.h2>
+    <motion.h1 className="text-8xl mb-4 font-bold">Welcome</motion.h1>
+    <motion.h2 className="text-4xl font-semibold">Make your crypto payments easy</motion.h2>
   </motion.div>
 );
 
