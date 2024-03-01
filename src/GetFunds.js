@@ -15,23 +15,11 @@ function GetFunds() {
   const [vaultAddress, setVaultAddress] = useState('');
   const { sdk, connected, connecting, provider, chainId } = useSDK();
 
-  const connect = async () => {
-      try {
-          const accounts = await sdk?.connect();
-          setAccount(accounts?.[0]);
-      } catch (err) {
-          console.warn("failed to connect..", err);
-      }
-  };
-
   useEffect(() => {
     const fetchVaultAddress = async () => {
 
-        
-
         if(!connected) {
           console.log("not connected")
-          await connect();
         }
         if (connected) {
           try {
@@ -73,7 +61,11 @@ function GetFunds() {
     }
   }, [id, fetched, connected]);
 
-  
+  if (!connected) {
+    return (
+      <div>NOT CONNECTED</div>
+    )
+  }
   if (!fetched) {
     return (
       <div>
