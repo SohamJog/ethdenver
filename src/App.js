@@ -48,7 +48,8 @@ function App() {
           </ul>
         </nav>
 
-        <button style={{ padding: 10, margin: 10 }} onClick={connect}>
+        <div className="App">
+            <button style={{ padding: 10, margin: 10 }} onClick={connect}>
                 Connect
             </button>
             {connected && (
@@ -60,6 +61,7 @@ function App() {
                     </>
                 </div>
             )}
+        </div>
 
         <Routes>
           <Route path="/" element={<HomeContent />} />
