@@ -23,6 +23,7 @@ function App() {
           <Route path="/" element={<HomeContent />} />
           <Route path="/add-funds" element={<AddFunds />} />
         </Routes>
+        tohar pappa
       </div>
     </Router>
   );
