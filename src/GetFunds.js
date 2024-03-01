@@ -16,9 +16,13 @@ function GetFunds() {
   const { sdk, connected, connecting, provider, chainId } = useSDK();
 
   useEffect(() => {
+
+
     const fetchVaultAddress = async () => {
 
         if(!connected) {
+          const accounts = await sdk?.connect();
+          setAccount(accounts?.[0]);
           console.log("not connected")
         }
         if (connected) {
