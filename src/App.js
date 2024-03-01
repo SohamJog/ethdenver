@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import AddFunds from '/Users/anshk/Documents/ethdenver/src/AddFunds.js'; // Make sure to create this component
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import AddFunds from './AddFunds.js'; 
+import GetFunds from './GetFunds.js';
+import { BrowserRouter as Router, Routes, Route, Link, Switch } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
 
@@ -81,11 +82,14 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeContent />} />
           <Route path="/add-funds" element={<AddFunds />} />
+          <Route path="/getfunds/:id" element={<GetFunds/>} />
+        
         </Routes>
       </StyledApp>
     </Router>
   );
 }
+
 
 const HomeContent = () => (
   <Content
