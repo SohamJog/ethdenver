@@ -18,6 +18,7 @@ function SendFunds() {
         .join('');
       const randomBytes32 = `0x${randomBytesHex}`;
       
+      
       const provider = new ethers.BrowserProvider(window.ethereum)
 
       // MetaMask requires requesting permission to connect users accounts
@@ -38,7 +39,7 @@ function SendFunds() {
       // Call createVault function from VaultFactory contract
       await vaultFactory.createVault(randomBytes32, { value: ethers.parseEther(amount) });
 
-      console.log('Vault created successfully');
+      console.log('Vault created successfully ' + randomBytes32);
     } catch (error) {
       console.error('Error creating vault:', error);
     }
