@@ -134,21 +134,7 @@ function App() {
 
 
 const HomeContent = () => {
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'Web Share Example',
-          text: 'https://ethdenver-smoky.vercel.app/getfunds/0xe4a85dae924334a4bf5cfb8dca509b7f4dd72d421add43c884e70b3fbe201b9a '
-        });
-        console.log('Content shared successfully');
-      } catch (error) {
-        console.error('Error sharing content:', error);
-      }
-    } else {
-      console.log('Web Share API is not supported in this browser.');
-    }
-  };
+  
 
   return (
     <motion.div
@@ -160,7 +146,6 @@ const HomeContent = () => {
     >
       <motion.h1 className="text-8xl mb-4 font-bold">Welcome</motion.h1>
       <motion.h2 className="text-4xl font-semibold">Make your crypto payments easy</motion.h2>
-      <button onClick={handleShare}>Share</button>
     </motion.div>
   );
 };

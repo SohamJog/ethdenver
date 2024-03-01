@@ -8,6 +8,21 @@ function SendFunds() {
   const [amount, setAmount] = useState(0);
   const [vault, setVault] = useState('');
 
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Get Your Funds',
+          text: `https://ethdenver-smoky.vercel.app/getfunds/${vault} `
+        });
+        console.log('Content shared successfully');
+      } catch (error) {
+        console.error('Error sharing content:', error);
+      }
+    } else {
+      console.log('Web Share API is not supported in this browser.');
+    }
+  };
 
   const handleClick = async () => {
     try {
@@ -78,14 +93,7 @@ function SendFunds() {
           >
             Get Funds
           </a>
-          <button onClick={() => {
-            const shareLink = `https://ethdenver-smoky.vercel.app/getfunds/${vault}`;
-            navigator.clipboard.writeText(shareLink).then(() => {
-              alert("Link copied to clipboard! Long-press on a text input to share.");
-            }).catch((error) => {
-              console.error("Failed to copy link: ", error);
-            });
-          }}>Share Link</button>
+          <button onClick={handleShare}>Share Link</button>
         </div>
       )}
     </div>
