@@ -67,7 +67,6 @@ function App() {
           <Route path="/getfunds/:id" element={<GetFunds/>} />
           <Route path="/sendfunds" element={<SendFunds/>} />
         </Routes>
-        tohar pappa
       </div>
     </Router>
   );
