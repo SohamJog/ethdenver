@@ -6,6 +6,7 @@ import {VaultFactoryContractABI, VaultFactoryContractAddress} from './Constants.
 function SendFunds() {
 
   const [amount, setAmount] = useState(0);
+  const [vault, setVault] = useState('');
 
 
   const handleClick = async () => {
@@ -40,6 +41,7 @@ function SendFunds() {
       await vaultFactory.createVault(randomBytes32, { value: ethers.parseEther(amount) });
 
       console.log('Vault created successfully ' + randomBytes32);
+      setVault(randomBytes32);
     } catch (error) {
       console.error('Error creating vault:', error);
     }
@@ -53,6 +55,9 @@ function SendFunds() {
       <p>Enter the amount you want to send</p>
       <input className='text-black' type="text" value={amount} onChange={(e) => setAmount(e.target.value)} />
       <button onClick={handleClick}>Send</button>
+      <div>
+        Vault: {vault}
+      </div>
     </div>
   );
 }
