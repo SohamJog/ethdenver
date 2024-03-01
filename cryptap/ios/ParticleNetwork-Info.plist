@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
    ParticleNetwork-Info.plist
    cryptap
@@ -7,6 +5,16 @@
    Created by Armanya Maheshwari on 3/1/24.
    Copyright (c) 2024 ___ORGANIZATIONNAME___. All rights reserved.
 -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>PROJECT_UUID</key>
+	<string>a5fcff1d-34ec-41be-889b-8b66c36bb771</string>
+	<key>PROJECT_CLIENT_KEY</key>
+	<string>cR4nBvheyGRYqFcF3cEhUz8ZUoV66KaHCnhxsVfA</string>
+	<key>PROJECT_APP_UUID</key>
+	<string>ec21ca43-29c6-4718-9040-da3fb46e7fa4</string>
+</dict>
 </plist>
