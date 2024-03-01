@@ -3,16 +3,33 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { ethers } from 'ethers';
 import {VaultFactoryContractABI, VaultFactoryContractAddress, VaultContractABI} from './Constants.js';
+import { useSDK } from "@metamask/sdk-react";
 
 
 function GetFunds() {
   const { id } = useParams();
 
+  const [account, setAccount] = useState("");
+  const [showPopover, setShowPopover] = useState(false);
   const [fetched, setFetched] = useState(false);
   const [vaultAddress, setVaultAddress] = useState('');
+  const { sdk, connected, connecting, provider, chainId } = useSDK();
+
+  const connect = async () => {
+      try {
+          const accounts = await sdk?.connect();
+          setAccount(accounts?.[0]);
+      } catch (err) {
+          console.warn("failed to connect..", err);
+      }
+  };
+
   useEffect(() => {
     const fetchVaultAddress = async () => {
       try {
+        
+
+        !connected && connect();
         
         const provider = new ethers.BrowserProvider(window.ethereum)
 
@@ -47,7 +64,7 @@ function GetFunds() {
       fetchVaultAddress();
       setFetched(true);
     }
-  }, [id, fetched]);
+  }, [id, fetched, connected]);
 
   
   if (!fetched) {
