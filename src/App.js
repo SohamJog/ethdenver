@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import AddFunds from './AddFunds.js'; 
 import GetFunds from './GetFunds.js';
+import SendFunds from './SendFunds.js';
 import { BrowserRouter as Router, Routes, Route, Link, Switch } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
@@ -83,7 +84,7 @@ function App() {
           <Route path="/" element={<HomeContent />} />
           <Route path="/add-funds" element={<AddFunds />} />
           <Route path="/getfunds/:id" element={<GetFunds/>} />
-        
+          <Route path="/sendfunds" element={<SendFunds/>} />
         </Routes>
       </StyledApp>
     </Router>
