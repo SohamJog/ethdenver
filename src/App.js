@@ -64,7 +64,8 @@ function App() {
             {/* ... other NavItems */}
           </ul>
           <div className="flex"> {/* Add this div with the flex class */}
-            {connected ?
+
+            {/* {connected ?
               <div>
                 <Button aria-describedby={id} variant="contained" onClick={handleClick}>
                   Profile
@@ -102,7 +103,19 @@ function App() {
                   Connect
                 </Button>
               </div>
-            }
+            } */}
+             <button style={{ padding: 10, margin: 10 }} onClick={connect}>
+                Connect
+            </button>
+            {connected && (
+                <div>
+                    <>
+                        {chainId && `Connected chain: ${chainId}`}
+                        <p></p>
+                        {account && `Connected account: ${account}`}
+                    </>
+                </div>
+            )}
           </div>
         </nav>
 
