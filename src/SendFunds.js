@@ -51,7 +51,7 @@ function SendFunds() {
     <div>
       Send Funds Page
       <p>Enter the amount you want to send</p>
-      <input type="text" value={amount} onChange={(e) => setAmount(e.target.value)} />
+      <input className='text-black' type="text" value={amount} onChange={(e) => setAmount(e.target.value)} />
       <button onClick={handleClick}>Send</button>
     </div>
   );

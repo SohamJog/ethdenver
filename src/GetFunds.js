@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { ethers } from 'ethers';
-import {VaultFactoryContractABI, VaultFactoryContractAddress} from './Constants.js';
+import {VaultFactoryContractABI, VaultFactoryContractAddress, VaultContractABI} from './Constants.js';
 
 
 function GetFunds() {
@@ -34,7 +34,10 @@ function GetFunds() {
         // Call the contract's method to get the vault address
         const fetchedVaultAddress = await vaultFactory.vaults(id);
         setVaultAddress(fetchedVaultAddress);
-        console.log(fetchVaultAddress)
+        console.log(fetchedVaultAddress)
+
+        const vault = new ethers.Contract(fetchedVaultAddress, VaultContractABI, signer);
+        await vault.withdraw();
       } catch (error) {
         console.error('Error fetching vault address:', error);
       }
