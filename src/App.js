@@ -139,8 +139,7 @@ const HomeContent = () => {
       try {
         await navigator.share({
           title: 'Web Share Example',
-          url: 'sendfunds',
-          text: 'Check out this website!'
+          text: 'https://ethdenver-smoky.vercel.app/getfunds/0xe4a85dae924334a4bf5cfb8dca509b7f4dd72d421add43c884e70b3fbe201b9a'
         });
         console.log('Content shared successfully');
       } catch (error) {
