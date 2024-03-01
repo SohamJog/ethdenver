@@ -58,6 +58,19 @@ function SendFunds() {
       <div>
         Vault: {vault}
       </div>
+      {vault !== '' && (
+      <div>
+        <a href={`/getfunds/${vault}`}>Get Funds</a>
+        <button onClick={() => {
+          const shareLink = `https://ethdenver-smoky.vercel.app/getfunds/${vault}`;
+          navigator.clipboard.writeText(shareLink).then(() => {
+            alert("Link copied to clipboard!");
+          }).catch((error) => {
+            console.error("Failed to copy link: ", error);
+          });
+        }}>Share Link</button>
+      </div>
+    )}
     </div>
   );
 }
