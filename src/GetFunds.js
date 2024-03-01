@@ -27,11 +27,8 @@ function GetFunds() {
   useEffect(() => {
     const fetchVaultAddress = async () => {
 
-        
-
         if(!connected) {
           console.log("not connected")
-          await connect();
         }
         if (connected) {
           try {
