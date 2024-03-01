@@ -54,7 +54,7 @@ function SendFunds() {
     <div className="px-4 py-2">
       <p className="text-white mb-4">Enter the amount you want to send:</p>
       <input 
-        className="w-full px-3 py-2 border border-gray-300 rounded-md mb-4"
+        className="w-full px-3 py-2 border border-gray-300 rounded-md mb-4 text-black"
         type="text" 
         value={amount} 
         onChange={(e) => setAmount(e.target.value)} 

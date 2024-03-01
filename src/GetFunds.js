@@ -26,43 +26,50 @@ function GetFunds() {
 
   useEffect(() => {
     const fetchVaultAddress = async () => {
-      try {
+
         
 
-        !connected && connect();
-        
-        const provider = new ethers.BrowserProvider(window.ethereum)
-
-        // MetaMask requires requesting permission to connect users accounts
-        await window.ethereum.request({ method: 'eth_requestAccounts' });
-  
-        
-        // The MetaMask plugin also allows signing transactions to
-        // send ether and pay to change state within the blockchain.
-        // For this, you need the account signer...
-        const signer = await provider.getSigner()
-        console.log('Signer:', signer);
-  
-  
-  
-        // Instantiate VaultFactory contract
-        const vaultFactory = new ethers.Contract(VaultFactoryContractAddress, VaultFactoryContractABI, signer);
-
-        // Call the contract's method to get the vault address
-        const fetchedVaultAddress = await vaultFactory.vaults(id);
-        setVaultAddress(fetchedVaultAddress);
-        console.log(fetchedVaultAddress)
-
-        const vault = new ethers.Contract(fetchedVaultAddress, VaultContractABI, signer);
-        await vault.withdraw();
-      } catch (error) {
-        console.error('Error fetching vault address:', error);
-      }
-    };
+        if(!connected) {
+          console.log("not connected")
+          await connect();
+        }
+        if (connected) {
+          try {
+            console.log("here")
+            const provider = new ethers.BrowserProvider(window.ethereum)
+    
+            // MetaMask requires requesting permission to connect users accounts
+            await window.ethereum.request({ method: 'eth_requestAccounts' });
+      
+            
+            // The MetaMask plugin also allows signing transactions to
+            // send ether and pay to change state within the blockchain.
+            // For this, you need the account signer...
+            const signer = await provider.getSigner()
+            console.log('Signer:', signer);
+      
+      
+      
+            // Instantiate VaultFactory contract
+            const vaultFactory = new ethers.Contract(VaultFactoryContractAddress, VaultFactoryContractABI, signer);
+    
+            // Call the contract's method to get the vault address
+            const fetchedVaultAddress = await vaultFactory.vaults(id);
+            setVaultAddress(fetchedVaultAddress);
+            console.log(fetchedVaultAddress)
+    
+            const vault = new ethers.Contract(fetchedVaultAddress, VaultContractABI, signer);
+            await vault.withdraw();
+            setFetched(true);
+          } catch (error) {
+            console.error('Error fetching vault address:', error);
+          }
+        }
+        };
+       
 
     if (id && !fetched) {
       fetchVaultAddress();
-      setFetched(true);
     }
   }, [id, fetched, connected]);
 
