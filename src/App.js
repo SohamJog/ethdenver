@@ -139,7 +139,7 @@ const HomeContent = () => {
       try {
         await navigator.share({
           title: 'Web Share Example',
-          url: 'pornhub.com',
+          url: 'sendfunds',
           text: 'Check out this website!'
         });
         console.log('Content shared successfully');
