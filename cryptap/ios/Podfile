@@ -54,21 +54,24 @@ target 'cryptap' do
   )
 
   post_install do |installer|
-    react_native_post_install(
-      installer,
-      config[:reactNativePath],
-      :mac_catalyst_enabled => false
-    )
 
     installer.pods_project.targets.each do |target|
       if target.name == 'ParticleNetworkBase' or 
           target.name == 'ParticleAuthService' or 
           target.name == 'CryptoSwift' or 
           target.name == 'SwiftyUserDefaults'
-          target.build_configurations.each do |config|
-              config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+        target.build_configurations.each do |config|
+          config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+        end
       end
-    end
+    
+    react_native_post_install(
+      installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false
+    )
+
+    
 
     # This is necessary for Xcode 14, because it signs resource bundles by default
     # when building for devices.
@@ -80,7 +83,6 @@ target 'cryptap' do
         end
       end
     end
-
     
   end
 
@@ -91,4 +93,5 @@ target 'cryptap' do
       Pod::UI.warn e
     end
   end
+
 end
