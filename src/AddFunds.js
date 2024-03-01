@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 function AddFunds() {
-  // Placeholder function for handling fund submission
   const handleAddFunds = () => {
     console.log("Fund submission logic would go here.");
     // Here you would add the logic to connect to MetaMask and Particle Network
