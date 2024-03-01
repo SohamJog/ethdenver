@@ -6,6 +6,7 @@ import {VaultFactoryContractABI, VaultFactoryContractAddress} from './Constants.
 function SendFunds() {
 
   const [amount, setAmount] = useState(0);
+  const [vault, setVault] = useState('');
 
 
   const handleClick = async () => {
@@ -40,6 +41,7 @@ function SendFunds() {
       await vaultFactory.createVault(randomBytes32, { value: ethers.parseEther(amount) });
 
       console.log('Vault created successfully ' + randomBytes32);
+      setVault(randomBytes32);
     } catch (error) {
       console.error('Error creating vault:', error);
     }
@@ -48,12 +50,46 @@ function SendFunds() {
 
   return (
     //Have a text box for amount
-    <div>
-      Send Funds Page
-      <p>Enter the amount you want to send</p>
-      <input type="text" value={amount} onChange={(e) => setAmount(e.target.value)} />
-      <button onClick={handleClick}>Send</button>
+    <div className=" bg-gradient-to-tr from-[#120136] to-[#120136] max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="px-4 py-2">
+      <p className="text-white mb-4">Enter the amount you want to send:</p>
+      <input 
+        className="w-full px-3 py-2 border border-gray-300 rounded-md mb-4 text-black"
+        type="text" 
+        value={amount} 
+        onChange={(e) => setAmount(e.target.value)} 
+        placeholder="Enter Amount" 
+      />
+      <button 
+        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        onClick={handleClick}
+      >
+        Send
+      </button>
+      <div className="mt-4">
+        <p className="text-gray-600">Vault:</p>
+        <p className="font-bold">{vault}</p>
+      </div>
+      {vault !== '' && (
+        <div className="mt-4">
+          <a 
+            href={`/getfunds/${vault}`} 
+            className="text-blue-500 hover:underline mr-2"
+          >
+            Get Funds
+          </a>
+          <button onClick={() => {
+            const shareLink = `https://ethdenver-smoky.vercel.app/getfunds/${vault}`;
+            navigator.clipboard.writeText(shareLink).then(() => {
+              alert("Link copied to clipboard! Long-press on a text input to share.");
+            }).catch((error) => {
+              console.error("Failed to copy link: ", error);
+            });
+          }}>Share Link</button>
+        </div>
+      )}
     </div>
+  </div>
   );
 }
 
