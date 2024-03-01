@@ -104,10 +104,10 @@ function App() {
                 </Button>
               </div>
             } */}
-             <button style={{ padding: 10, margin: 10 }} onClick={connect}>
+             <button className="bg-blue-500 rounded"style={{ padding: 10, margin: 10 }} onClick={connect}>
                 Connect
             </button>
-            {connected && (
+            {/* {connected && (
                 <div>
                     <>
                         {chainId && `Connected chain: ${chainId}`}
@@ -115,7 +115,7 @@ function App() {
                         {account && `Connected account: ${account}`}
                     </>
                 </div>
-            )}
+            )} */}
           </div>
         </nav>
 
