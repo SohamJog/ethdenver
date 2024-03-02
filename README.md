@@ -1,6 +1,6 @@
 <div align="center">
 
-![CrypTap Logo](CrypTap.png)
+<img src="CrypTap.png" alt="CrypTap Logo" width="200"/>
 
 # 🚀 CrypTap: Crypto Payments at a Tap 🚀
 
@@ -12,40 +12,49 @@
 
 </div>
 
-## 🛠 Built With Cutting-Edge Technology:
+## 🌟 Built With Excellence:
 
-![Solidity](https://img.shields.io/badge/Solidity-3C3C3D?logo=solidity&logoColor=white)
+<div align="center">
+
+![Solidity](https://img.shields.io/badge/Solidity-363636?logo=solidity&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![tailwind](https://img.shields.io/badge/tailwind-38B2AC?logo=tailwind-css&logoColor=white)
-![harpie.io](https://img.shields.io/badge/harpie.io-000000?logo=harpie&logoColor=white)
-![Linea](https://img.shields.io/badge/Linea-Metamask_SDKs-orange)
-![React Native](https://img.shields.io/badge/React%20Native-20232A?logo=react&logoColor=61DAFB)
-![NFC & Apple AirDrop](https://img.shields.io/badge/NFC%20&%20Apple%20AirDrop-000000?logo=apple&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
+![Metamask](https://img.shields.io/badge/Metamask-FF6B00?logo=metamask&logoColor=white)
+![Ethers.js](https://img.shields.io/badge/Ethers.js-3C3C3D?logo=ethers&logoColor=white)
+![Web3.js](https://img.shields.io/badge/Web3.js-F16822?logo=web3.js&logoColor=white)
+![Hardhat](https://img.shields.io/badge/Hardhat-FFDB58?logo=hardhat&logoColor=black)
+![IPFS](https://img.shields.io/badge/IPFS-65C2CB?logo=ipfs&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
 
-CrypTap harnesses the synergy of blockchain and NFC to deliver a frictionless payment experience.
+</div>
 
-### Linea
-Utilizing Linea's Goerli TestNet, CrypTap ensures fast and cost-effective transactions. Our smart contracts are a testament to our commitment to security and efficiency.
+CrypTap is a testament to the power of blockchain technology, delivered through a user-friendly NFC interface.
 
-### Metamask SDK
-Metamask's SDK empowers us to integrate wallet functionalities seamlessly, bringing you a unified experience across platforms.
+### 🛠 Linea
+Experience rapid and cost-effective transactions with Linea's Goerli TestNet.
 
-### Harpie
-Ensuring the integrity of transactions, Harpie protects against compromised addresses, allowing only secure transactions to proceed.
+### 🔐 Metamask SDK
+Metamask's SDK empowers seamless integration for wallet functionalities across platforms.
 
-## 🚀 Quick Start
+### 🛡 Harpie
+Harpie safeguards transactions by ensuring the integrity of sender addresses.
 
-1. **Initiate a Transaction**: Open CrypTap, select your ETH amount, and initiate the send.
-2. **Share Securely**: A unique link is generated for sharing via NFC, ensuring that your crypto reaches the intended recipient.
-3. **Verify & Receive**: The receiver's device auto-verifies the transaction integrity before completion, thanks to our backend API checks.
+## 🚀 How It Works:
+
+1. **Initiate**: Begin your transaction on CrypTap with a selection of the ETH amount.
+2. **Share**: A secure link for the transaction is generated, shareable via NFC.
+3. **Verify & Transact**: Transactions are verified for integrity before completion, providing peace of mind with every transfer.
 
 ## 📚 Documentation & Live Demo
 
-Dive into our comprehensive [documentation](https://link_to_your_documentation) to explore the intricacies of CrypTap or check out our [**live demo**](https://ethdenver-smoky.vercel.app/) and experience the ease and security of NFC crypto payments.
+Get a deeper understanding of CrypTap's functionalities by visiting our [documentation](https://link_to_your_documentation). Or experience the platform firsthand with our [**live demo**](https://ethdenver-smoky.vercel.app/).
 
 ## 📝 License
 
-CrypTap is released under the [MIT License](https://opensource.org/licenses/MIT).
+CrypTap is open-sourced software licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ---
 
