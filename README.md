@@ -4,7 +4,7 @@
 
 #  CrypTap: Crypto Payments at a Tap 
 
-**Unlock the power of NFC for crypto payments. Share crypto, NFTs, and more with just a tap.**
+**Tap, Send, and Secure Your Crypto: The Future of Payments is Here! Experience Instant, Contactless Transactions with Our Revolutionary NFC and AirDrop Technology. Wallet-Free, Worry-Free.**
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://ethdenver-smoky.vercel.app/)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
