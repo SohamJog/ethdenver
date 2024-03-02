@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="CrypTap.png" alt="CrypTap Logo" width="200"/>
+<img src="CrypTapLogoFinal.png" alt="CrypTap Logo" width="200"/>
 
 #  CrypTap: Crypto Payments at a Tap 
 
