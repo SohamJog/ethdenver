@@ -19,10 +19,8 @@ function GetFunds() {
 
 
     const fetchVaultAddress = async () => {
-        if(!connected) {
-          console.log("not connected")
-        }
-        if (connected) {
+      
+
           try {
             console.log("here")
             const provider = new ethers.BrowserProvider(window.ethereum)
@@ -53,7 +51,6 @@ function GetFunds() {
           } catch (error) {
             console.error('Error fetching vault address:', error);
           }
-        }
         };
        
 
