@@ -89,10 +89,10 @@ function SendFunds() {
       >
         Send
       </button>
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <p className="text-gray-600">Vault:</p>
         <p className="font-bold">{vault}</p>
-      </div>
+      </div> */}
       {vault !== '' && (
         <div className="mt-4">
           <a 
