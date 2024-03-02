@@ -47,42 +47,59 @@ function App() {
 
 
   return (
+    // <Router>
+    //   <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-white min-h-screen flex flex-col">
+    //     <nav className="flex justify-between items-center p-4 ">
+    //       <Link to="/" className="no-underline text-white">
+    //         <div className="text-2xl font-bold">CrypTap</div>
+    //       </Link>
+    //       <ul className="flex gap-8">
+    //         <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
+    //           <Link to="/" className="no-underline text-white">Home</Link>
+    //         </li>
+    //         {/* <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
+    //           <Link to="/add-funds" className="no-underline text-white">Add Funds</Link>
+    //         </li> */}
+    //         <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
+    //           <Link to="/sendfunds" className="no-underline text-white">Send Funds</Link>
+    //         </li>
+    //         {/* ... other NavItems */}
+    //       </ul>
+    //       <div className="flex"> {/* Add this div with the flex class */}
+
+    //          <button className="bg-blue-900 rounded"style={{ padding: 10, margin: 10 }} onClick={connect}>
+    //             Connect
+    //         </button>
+
+    //       </div>
+
+    //     </nav>
+
+    //     <Routes>
+    //       <Route path="/" element={<HomeContent />} />
+    //       <Route path="/add-funds" element={<AddFunds />} />
+    //       <Route path="/getfunds/:id" element={<GetFunds />} />
+    //       <Route path="/sendfunds" element={<SendFunds />} />
+    //     </Routes>
+    //   </div>
+    // </Router>
     <Router>
-      <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-white min-h-screen flex flex-col">
-        <nav className="flex justify-between items-center p-4 ">
-          <Link to="/" className="no-underline text-white">
-            <div className="text-2xl font-bold">CrypTap</div>
-          </Link>
-          <ul className="flex gap-8">
-            <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
-              <Link to="/" className="no-underline text-white">Home</Link>
-            </li>
-            {/* <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
-              <Link to="/add-funds" className="no-underline text-white">Add Funds</Link>
-            </li> */}
-            <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
-              <Link to="/sendfunds" className="no-underline text-white">Send Funds</Link>
-            </li>
-            {/* ... other NavItems */}
-          </ul>
-          <div className="flex"> {/* Add this div with the flex class */}
+    <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-white min-h-screen flex flex-col">
+      <nav className="flex justify-between items-center p-4">
+        <Link to="/" className="no-underline text-white text-2xl font-bold">CrypTap</Link>
+        <Link to="/sendfunds" className="no-underline text-white">Send Funds</Link>
+        <button className="bg-blue-900 rounded p-2 m-2" onClick={connect}>Connect</button>
+      </nav>
 
-             <button className="bg-blue-900 rounded"style={{ padding: 10, margin: 10 }} onClick={connect}>
-                Connect
-            </button>
+      <Routes>
+        <Route path="/" element={<HomeContent />} />
+        <Route path="/add-funds" element={<AddFunds />} />
+        <Route path="/getfunds/:id" element={<GetFunds />} />
+        <Route path="/sendfunds" element={<SendFunds />} />
+      </Routes>
+    </div>
+  </Router>
 
-          </div>
-
-        </nav>
-
-        <Routes>
-          <Route path="/" element={<HomeContent />} />
-          <Route path="/add-funds" element={<AddFunds />} />
-          <Route path="/getfunds/:id" element={<GetFunds />} />
-          <Route path="/sendfunds" element={<SendFunds />} />
-        </Routes>
-      </div>
-    </Router>
   );
 }
 
