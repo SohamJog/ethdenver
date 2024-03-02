@@ -30,6 +30,8 @@ function App() {
     setAnchorEl(null);
   };
 
+  
+
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
@@ -131,17 +133,21 @@ function App() {
 }
 
 
-const HomeContent = () => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 1 }}
-    className="flex-1 flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-purple-500 text-white"
-    style={{ minHeight: '100vh' }}
-  >
-    <motion.h1 className="text-8xl mb-4 font-bold">Welcome</motion.h1>
-    <motion.h2 className="text-4xl font-semibold">Make your crypto payments easy</motion.h2>
-  </motion.div>
-);
+const HomeContent = () => {
+  
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="flex-1 flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+      style={{ minHeight: '100vh' }}
+    >
+      <motion.h1 className="text-8xl mb-4 font-bold">Welcome</motion.h1>
+      <motion.h2 className="text-4xl font-semibold">Make your crypto payments easy</motion.h2>
+    </motion.div>
+  );
+};
 
 export default App;

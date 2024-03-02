@@ -1,7 +1,7 @@
 #import "AppDelegate.h"
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTLinkingManager.h>
-#import <react_native_particle_auth-Swift.h>
+#import <react_native_particle_auth/react_native_particle_auth-Swift.h>
 
 @implementation AppDelegate
 
