@@ -57,12 +57,6 @@ function GetFunds() {
     // }
   }, [id, fetched, connected]);
 
-  if (!connected) {
-    return (
-      <div>NOT CONNECTED</div>
-    )
-  }
-  
 
   return (
     <div>
