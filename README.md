@@ -1,4 +1,4 @@
-# 🚀 CrypTap: Revolutionizing Crypto Payments with NFC 🚀
+# 🚀 CrypTap: Revolutionizing Crypto Payments with NFC 
 
 Unlock the power of Near Field Communication (NFC) with **CrypTap**, the future of cryptocurrency transactions. Our platform seamlessly blends cutting-edge technology and user-friendly design to create a revolutionary payment experience. Share crypto, NFTs, and more with just a tap, leveraging the unparalleled convenience of NFC technology.
 
