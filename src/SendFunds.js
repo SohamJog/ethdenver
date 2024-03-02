@@ -3,6 +3,10 @@ import React, {useState} from 'react';
 import { ethers } from 'ethers';
 import {VaultFactoryContractABI, VaultFactoryContractAddress} from './Constants.js';
 
+
+
+
+
 function SendFunds() {
 
   const [amount, setAmount] = useState(0);
@@ -35,10 +39,14 @@ function SendFunds() {
       const randomBytes32 = `0x${randomBytesHex}`;
       
       
+      //OLD CODE WITH ETHERS
       const provider = new ethers.BrowserProvider(window.ethereum)
 
       // MetaMask requires requesting permission to connect users accounts
       await window.ethereum.request({ method: 'eth_requestAccounts' });
+      // //NEW CODE WITH METAMASK SDK
+      // let provider = createExternalExtensionProvider();
+      // const accounts = await provider.request({ method: "eth_requestAccounts" });
 
       
       // The MetaMask plugin also allows signing transactions to
