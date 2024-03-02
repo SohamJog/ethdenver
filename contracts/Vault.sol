@@ -5,9 +5,9 @@ contract Vault {
     address public sender;
     uint256 amount;
 
-    constructor () payable {
+    constructor (address _sender) payable {
         amount = msg.value;
-        sender = msg.sender;
+        sender = _sender;
     }
 
      function withdraw() external {
@@ -22,8 +22,8 @@ contract VaultFactory {
 
     function createVault(bytes32 id) external payable {
         require(vaults[id] == address(0), "Vault with this ID already exists");
-        Vault newVault = new Vault{value: msg.value}();
+        Vault newVault = new Vault{value: msg.value}(msg.sender);
         vaults[id] = address(newVault);
     }
-    
+
 }

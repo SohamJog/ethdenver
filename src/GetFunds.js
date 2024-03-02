@@ -14,6 +14,7 @@ function GetFunds() {
   const [fetched, setFetched] = useState(false);
   const [vaultAddress, setVaultAddress] = useState('');
   const { sdk, connected, connecting, provider, chainId } = useSDK();
+  const [harpieStatus, setHarpieStatus] = useState("");
 
 
   const fetchVaultAddress = async () => {
@@ -44,18 +45,38 @@ function GetFunds() {
       console.log(fetchedVaultAddress)
 
       const vault = new ethers.Contract(fetchedVaultAddress, VaultContractABI, signer);
+
+      const senderAddress = await vault.sender();
+      console.log("Sender address " + senderAddress)
+
+      const res = await fetch("https://api.harpie.io/v2/validateAddress", {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            apiKey: "f5a73366-7e03-4308-81e1-a3cc7d0b9395",
+            address: senderAddress
+        })
+    })
+    const result = await res.json();
+    const malicious = String(result.isMaliciousAddress);
+    if (malicious !== "false") {
+      return;
+    }
+    setHarpieStatus(malicious);
+    const summary = result.summary;
+
+
+    console.log(res)
       await vault.withdraw();
       setFetched(true);
     } catch (error) {
       console.error('Error fetching vault address:', error);
     }
   };
-  useEffect(() => {
 
-    // if (id && !fetched) {
-    //   fetchVaultAddress();
-    // }
-  }, [id, fetched, connected]);
 
 
   return (
@@ -63,6 +84,20 @@ function GetFunds() {
       <h2>Get Funds Page</h2>
       <button className='bg-blue rounded' onClick={fetchVaultAddress}> Get Money</button>
       <p>ID: {id}</p>
+      <div>
+      {harpieStatus === "true" && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <p className="font-bold">Sender is a malicious address, transaction blocked</p>
+        </div>
+      )}
+      {harpieStatus === "false" && (
+        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+          <p className="font-bold">Sender is not a malicious address, your money is on its way!</p>
+        </div>
+      )}
+    </div>
+
+
       
     </div>
   );
