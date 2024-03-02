@@ -2,7 +2,7 @@
 
 <img src="CrypTap.png" alt="CrypTap Logo" width="200"/>
 
-# 🚀 CrypTap: Crypto Payments at a Tap 🚀
+#  CrypTap: Crypto Payments at a Tap 
 
 **Unlock the power of NFC for crypto payments. Share crypto, NFTs, and more with just a tap.**
 
