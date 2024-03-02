@@ -1,5 +1,7 @@
-
-export const VaultFactoryContractAddress = "0x1fb8871994A9A6914204B30c635AE6EA0eBa313C"
+//Sepolia:
+//export const VaultFactoryContractAddress = "0x1fb8871994A9A6914204B30c635AE6EA0eBa313C"\
+//Linea Goerli:
+export const VaultFactoryContractAddress = "0xCc22175aeC868a7A2e8DD00a6E848F78C51971FB"
 export const VaultFactoryContractABI = [
 	{
 		"inputs": [
