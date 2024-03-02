@@ -1,6 +1,6 @@
 <div align="center">
 
-![CrypTap Logo](path_to_logo/CrypTap.png)
+![CrypTap Logo](CrypTap.png)
 
 # 🚀 CrypTap: Crypto Payments at a Tap 🚀
 
