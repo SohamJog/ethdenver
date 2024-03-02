@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { ethers } from 'ethers';
 import {VaultFactoryContractABI, VaultFactoryContractAddress, VaultContractABI} from './Constants.js';
 import { useSDK } from "@metamask/sdk-react";
+import { motion } from 'framer-motion';
+
 
 
 function GetFunds() {
@@ -80,26 +82,30 @@ function GetFunds() {
 
 
   return (
+    <div className="mt-8 flex flex-col items-center justify-center">
+    <h1 className="text-white text-2xl mb-4">Get Money</h1>
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={fetchVaultAddress}
+      className="mt-2 p-2.5 border-none rounded bg-blue-600 text-white cursor-pointer"
+    >
+      Get Money
+    </motion.button>
+    <p className="text-white my-4">ID: {id}</p>
     <div>
-      <h2>Get Funds Page</h2>
-      <button className='bg-blue rounded' onClick={fetchVaultAddress}> Get Money</button>
-      <p>ID: {id}</p>
-      <div>
       {harpieStatus === "true" && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
           <p className="font-bold">Sender is a malicious address, transaction blocked</p>
         </div>
       )}
       {harpieStatus === "false" && (
-        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
           <p className="font-bold">Sender is not a malicious address, your money is on its way!</p>
         </div>
       )}
     </div>
-
-
-      
-    </div>
+  </div>
   );
 }
 

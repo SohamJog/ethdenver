@@ -48,18 +48,18 @@ function App() {
 
   return (
     <Router>
-      <div className="bg-gradient-to-tr from-[#120136] to-[#120136] text-white min-h-screen flex flex-col">
-        <nav className="flex justify-between items-center p-4 bg-[#120136]">
+      <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-white min-h-screen flex flex-col">
+        <nav className="flex justify-between items-center p-4 ">
           <Link to="/" className="no-underline text-white">
-            <div className="text-2xl font-bold">BoilerBlockchain</div>
+            <div className="text-2xl font-bold">CrypTap</div>
           </Link>
           <ul className="flex gap-8">
             <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
               <Link to="/" className="no-underline text-white">Home</Link>
             </li>
-            <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
+            {/* <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
               <Link to="/add-funds" className="no-underline text-white">Add Funds</Link>
-            </li>
+            </li> */}
             <li className="py-2 px-4 cursor-pointer hover:bg-[rgba(255,255,255,0.1)]">
               <Link to="/sendfunds" className="no-underline text-white">Send Funds</Link>
             </li>
@@ -67,58 +67,12 @@ function App() {
           </ul>
           <div className="flex"> {/* Add this div with the flex class */}
 
-            {/* {connected ?
-              <div>
-                <Button aria-describedby={id} variant="contained" onClick={handleClick}>
-                  Profile
-                </Button>
-                <Popover
-                  id={id}
-                  open={open}
-                  anchorEl={anchorEl}
-                  onClose={handleClose}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'right',
-                  }}
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                >
-                  <List>
-                    <ListItem>
-                      <ListItemText>
-                        <Typography>Connected chain: {chainId}</Typography>
-                      </ListItemText>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemText>
-                          <Typography>Connected account: {account}</Typography>
-                        </ListItemText>
-                    </ListItem>
-                  </List>
-                </Popover>
-              </div> :
-              <div>
-                <Button variant="contained" onClick={connect}>
-                  Connect
-                </Button>
-              </div>
-            } */}
-             <button className="bg-blue-500 rounded"style={{ padding: 10, margin: 10 }} onClick={connect}>
+             <button className="bg-blue-900 rounded"style={{ padding: 10, margin: 10 }} onClick={connect}>
                 Connect
             </button>
-            {/* {connected && (
-                <div>
-                    <>
-                        {chainId && `Connected chain: ${chainId}`}
-                        <p></p>
-                        {account && `Connected account: ${account}`}
-                    </>
-                </div>
-            )} */}
+
           </div>
+
         </nav>
 
         <Routes>
@@ -138,15 +92,28 @@ const HomeContent = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="flex-1 flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-purple-500 text-white"
-      style={{ minHeight: '100vh' }}
-    >
-      <motion.h1 className="text-8xl mb-4 font-bold">Welcome</motion.h1>
-      <motion.h2 className="text-4xl font-semibold">Make your crypto payments easy</motion.h2>
-    </motion.div>
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+    className="flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+    style={{ minHeight: '100vh' }}
+  >
+    <div className="flex flex-col justify-center items-center h-screen">
+      <motion.h1 className="text-6xl font-bold mb-6">CrypTap</motion.h1>
+      <motion.h2 className="text-4xl font-semibold mb-8">Unlock the power of NFC to instantly share crypto, NFTs, and more with just a tap.</motion.h2>
+
+    </div>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <motion.h1 className="text-6xl font-bold mb-6">Effortless and Intuitive</motion.h1>
+      <motion.h2 className="text-4xl font-semibold mb-4">Simplify asset sharing with the power of touch.</motion.h2>
+      <motion.h3 className="text-xl font-semibold mb-8">AirDrop your friends crypto, or any digital asset</motion.h3>
+    </div>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <motion.h1 className="text-6xl font-bold mb-6">Secure and Private</motion.h1>
+      <motion.h2 className="text-4xl font-semibold mb-4">Use Harpie to prevent malicious airdrops.</motion.h2>
+      <motion.h3 className="text-xl font-semibold mb-8">Trust CrypTap's advanced security features to safeguard your digital assets and personal information.</motion.h3>
+    </div>
+  </motion.div>
   );
 };
 

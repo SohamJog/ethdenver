@@ -73,18 +73,18 @@ function SendFunds() {
 
   return (
     //Have a text box for amount
-    <div className=" bg-gradient-to-tr from-[#120136] to-[#120136] max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-    <div className="px-4 py-2">
+    <div className=" mt-8 flex flex-col items-center justify-center">
+    <div className="text-white text-2xl mb-4">
       <p className="text-white mb-4">Enter the amount you want to send:</p>
       <input 
-        className="w-full px-3 py-2 border border-gray-300 rounded-md mb-4 text-black"
+        className="p-2.5 my-2 border border-white rounded bg-transparent text-white w-full max-w-xs"
         type="text" 
         value={amount} 
         onChange={(e) => setAmount(e.target.value)} 
         placeholder="Enter Amount" 
       />
       <button 
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        className="mt-5 p-2.5 border-none rounded bg-purple-600 text-white cursor-pointer hover:bg-purple-700 transition-colors duration-300 ease-in-out"
         onClick={handleClick}
       >
         Send
