@@ -1,19 +1,24 @@
-# CrypTap
+# 🚀 CrypTap: Revolutionizing Crypto Payments with NFC 🚀
 
-Check out our live demo here: [https://ethdenver-smoky.vercel.app/](url)
+Unlock the power of Near Field Communication (NFC) with **CrypTap**, the future of cryptocurrency transactions. Our platform seamlessly blends cutting-edge technology and user-friendly design to create a revolutionary payment experience. Share crypto, NFTs, and more with just a tap, leveraging the unparalleled convenience of NFC technology.
 
-Unlock the power of NFC to instantly share crypto, NFTs, and more with just a tap. We let the user send crypto using links. These links can be shared, or specifically air-dropped using Apple's new NFC feature(nfc because you can have airdrop off and still receive crypto payments from a friend or someone you trust). 
+## 🌐 Built Using the Best of Blockchain and NFC Technology:
 
-## Built using:
-### Linea: 
-We used Linea's Goerli TestNet for fast transaction speed and low gas fees. Our smart contracts can be found in the `contracts` folder. You may find our contract address here: [https://goerli.lineascan.build/address/0x1D5EfDba4f8acFd6d9098b356879639526aD5e99](url)
-### Metamask SDK: 
-We used Metamask's SDK to seamlessly integrate Metamask functionalities on web and mobile. It was super useful when it came to mobile payments.
-### Harpie: 
-We used Harpie to know if the sender's address is involved in hacks or has been compromised previously. The transaction only goes through if the sender has a clean record
+### 🛠 Linea: The Backbone of Speed and Security
+Utilizing Linea's Goerli TestNet, CrypTap ensures lightning-fast transactions with minimal gas fees. Dive into our `contracts` folder to see the magic behind our smart contracts. Discover our contract address and more [here](https://goerli.lineascan.build/address/0x1D5EfDba4f8acFd6d9098b356879639526aD5e99).
 
-## Procedure:
-The sender opens our website on phone/ laptop and then chooses the amount of ETH to be sent, and presses send. Once the transaction has been approved, a share link option shows up, and this link can be airdropped using NFC. The link automatically opens up on the receiver's end, and before the transaction goes through, an API call checks if the sender's address has been compromised previously. If it hasn't the receiver gets the payment. 
+### 🔐 Metamask SDK: Seamless Integration for Web and Mobile
+With the Metamask SDK, CrypTap offers a fluid, secure bridge between web and mobile. Our platform makes mobile payments not just possible but effortlessly enjoyable.
 
-In the backend, the crypto is stored in a temporary vault, this vault, which is opened by the receiver. 
+### 🛡 Harpie: Guardian of Transaction Integrity
+Security is paramount in the crypto world. Harpie scrutinizes the sender's address for any history of hacks or compromises, allowing only those with a clean slate to proceed. With CrypTap, your transactions are not just fast; they're also ironclad.
+
+## 🚀 How It Works: A Journey of Innovation
+
+1. **Initiate**: Open CrypTap on your device, choose your ETH amount, and hit send. Experience the ease of modern transactions.
+2. **Share**: Post-approval, a unique share link is generated. This can be air-dropped using NFC—innovation at its finest.
+3. **Secure Verification**: Upon receiving, the link activates an API call to verify the sender's address integrity. Only then does the transaction proceed.
+4. **Vault Storage**: The crypto is temporarily stored in a secure vault, accessible only by the receiver. This extra layer of security ensures peace of mind for both parties.
+
+CrypTap is more than an app; it's a new era for cryptocurrency transactions. Embrace the future, where sending crypto is as simple as a handshake. Welcome to CrypTap—where innovation meets convenience.
 
