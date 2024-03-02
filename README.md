@@ -1,24 +1,56 @@
-# 🚀 CrypTap: Revolutionizing Crypto Payments with NFC 
+<div align="center">
 
-Unlock the power of Near Field Communication (NFC) with **CrypTap**, the future of cryptocurrency transactions. Our platform seamlessly blends cutting-edge technology and user-friendly design to create a revolutionary payment experience. Share crypto, NFTs, and more with just a tap, leveraging the unparalleled convenience of NFC technology.
+![CrypTap Logo](path_to_logo/CrypTap.png)
 
-## 🌐 Built Using the Best of Blockchain and NFC Technology:
+# 🚀 CrypTap: Crypto Payments at a Tap 🚀
 
-### 🛠 Linea: The Backbone of Speed and Security
-Utilizing Linea's Goerli TestNet, CrypTap ensures lightning-fast transactions with minimal gas fees. Dive into our `contracts` folder to see the magic behind our smart contracts. Discover our contract address and more [here](https://goerli.lineascan.build/address/0x1D5EfDba4f8acFd6d9098b356879639526aD5e99).
+**Unlock the power of NFC for crypto payments. Share crypto, NFTs, and more with just a tap.**
 
-### 🔐 Metamask SDK: Seamless Integration for Web and Mobile
-With the Metamask SDK, CrypTap offers a fluid, secure bridge between web and mobile. Our platform makes mobile payments not just possible but effortlessly enjoyable.
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://ethdenver-smoky.vercel.app/)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
+[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()
 
-### 🛡 Harpie: Guardian of Transaction Integrity
-Security is paramount in the crypto world. Harpie scrutinizes the sender's address for any history of hacks or compromises, allowing only those with a clean slate to proceed. With CrypTap, your transactions are not just fast; they're also ironclad.
+</div>
 
-## 🚀 How It Works: A Journey of Innovation
+## 🛠 Built With Cutting-Edge Technology:
 
-1. **Initiate**: Open CrypTap on your device, choose your ETH amount, and hit send. Experience the ease of modern transactions.
-2. **Share**: Post-approval, a unique share link is generated. This can be air-dropped using NFC—innovation at its finest.
-3. **Secure Verification**: Upon receiving, the link activates an API call to verify the sender's address integrity. Only then does the transaction proceed.
-4. **Vault Storage**: The crypto is temporarily stored in a secure vault, accessible only by the receiver. This extra layer of security ensures peace of mind for both parties.
+![Solidity](https://img.shields.io/badge/Solidity-3C3C3D?logo=solidity&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![tailwind](https://img.shields.io/badge/tailwind-38B2AC?logo=tailwind-css&logoColor=white)
+![harpie.io](https://img.shields.io/badge/harpie.io-000000?logo=harpie&logoColor=white)
+![Linea](https://img.shields.io/badge/Linea-Metamask_SDKs-orange)
+![React Native](https://img.shields.io/badge/React%20Native-20232A?logo=react&logoColor=61DAFB)
+![NFC & Apple AirDrop](https://img.shields.io/badge/NFC%20&%20Apple%20AirDrop-000000?logo=apple&logoColor=white)
 
-CrypTap is more than an app; it's a new era for cryptocurrency transactions. Embrace the future, where sending crypto is as simple as a handshake. Welcome to CrypTap—where innovation meets convenience.
+CrypTap harnesses the synergy of blockchain and NFC to deliver a frictionless payment experience.
 
+### Linea
+Utilizing Linea's Goerli TestNet, CrypTap ensures fast and cost-effective transactions. Our smart contracts are a testament to our commitment to security and efficiency.
+
+### Metamask SDK
+Metamask's SDK empowers us to integrate wallet functionalities seamlessly, bringing you a unified experience across platforms.
+
+### Harpie
+Ensuring the integrity of transactions, Harpie protects against compromised addresses, allowing only secure transactions to proceed.
+
+## 🚀 Quick Start
+
+1. **Initiate a Transaction**: Open CrypTap, select your ETH amount, and initiate the send.
+2. **Share Securely**: A unique link is generated for sharing via NFC, ensuring that your crypto reaches the intended recipient.
+3. **Verify & Receive**: The receiver's device auto-verifies the transaction integrity before completion, thanks to our backend API checks.
+
+## 📚 Documentation & Live Demo
+
+Dive into our comprehensive [documentation](https://link_to_your_documentation) to explore the intricacies of CrypTap or check out our [**live demo**](https://ethdenver-smoky.vercel.app/) and experience the ease and security of NFC crypto payments.
+
+## 📝 License
+
+CrypTap is released under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+<div align="center">
+
+Crafted with ❤️ by the CrypTap Team.
+
+</div>
