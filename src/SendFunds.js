@@ -17,7 +17,7 @@ function SendFunds() {
       try {
         await navigator.share({
           title: 'Get Your Funds',
-          text: `https://ethdenver-smoky.vercel.app/getfunds/${vault} `
+          text: `https://ethdenver-smoky.vercel.app/getfunds/${vault}`
         });
         console.log('Content shared successfully');
       } catch (error) {
